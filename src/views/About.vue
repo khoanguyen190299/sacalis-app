@@ -1,9 +1,9 @@
 <template>
   <div class="home about">
-    <el-header
+    <el-header class="item-center"
       ><el-container><Header /></el-container
     ></el-header>
-    <el-main>
+    <el-main class="item-center">
       <el-container>
         <div class="about-main">
           <div class="about-session">
@@ -67,7 +67,7 @@
         </div>
       </el-container>
     </el-main>
-    <el-footer> <Footer /> </el-footer>
+    <el-footer class="item-center"> <Footer /> </el-footer>
   </div>
 </template>
 

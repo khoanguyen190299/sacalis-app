@@ -48,7 +48,7 @@
           </ul>
         </div>
       </el-col>
-      <el-col :span="5" class="align-center"
+      <el-col :span="5" class="align-center item-right"
         ><div class="account">
           <div class="account-btn item-middle">
             <button class="sigin">Đăng nhập</button>
@@ -87,13 +87,11 @@ export default {
         a {
           text-decoration: none;
           color: var(--greyscale-0, #fff);
-          font-family: "Medium";
           font-size: 14px;
           font-weight: 500;
           line-height: 20px;
         }
         .nav-active {
-          font-family: "Semibold";
           font-weight: 600;
           position: relative;
           &::before {
@@ -119,7 +117,6 @@ export default {
       }
       .sigin {
         color: var(--greyscale-0, #fff);
-        font-family: "Medium";
         font-size: 14px;
         font-weight: 500;
         line-height: 20px;
@@ -132,7 +129,6 @@ export default {
         background: var(--greyscale-0, #fff);
         border: 0;
         color: var(--greyscale-900, #111827);
-        font-family: "Semibold";
         font-size: 14px;
         font-weight: 600;
         line-height: 20px;

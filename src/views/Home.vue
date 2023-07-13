@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <el-header
+    <el-header class="item-center"
       ><el-container><Header /></el-container>
     </el-header>
     <div class="side-bar">
@@ -21,7 +21,7 @@
     </div>
     <el-main>
       <!-- Giới thiệu -->
-      <div class="session">
+      <div class="session item-center">
         <el-container>
           <div class="session-title">
             <p>GIỚI THIỆU</p>
@@ -55,7 +55,7 @@
       </div>
 
       <!-- Đội ngũ -->
-      <div class="session">
+      <div class="session item-center">
         <el-container>
           <div class="session-title">
             <p>THÀNH VIÊN</p>
@@ -90,7 +90,7 @@
       </div>
 
       <!-- Dịch vụ -->
-      <div class="session">
+      <div class="session item-center">
         <el-container>
           <div class="session-title">
             <p>HUẤN LUYỆN VIÊN</p>
@@ -133,7 +133,7 @@
       </div>
 
       <!-- Giáo án -->
-      <div class="session">
+      <div class="session item-center">
         <el-container>
           <div class="session-title">
             <p>TẬP LUYỆN</p>
@@ -172,7 +172,7 @@
         </el-container>
       </div>
     </el-main>
-    <el-footer>
+    <el-footer class="item-center">
       <Footer />
     </el-footer>
   </div>
@@ -263,10 +263,13 @@ export default defineComponent({
   flex-direction: column;
   height: 100%;
   min-height: 100vh;
+  .el-container {
+    max-width: 1393px;
+  }
   .el-header {
     /* --el-header-padding: none; */
     --el-header-height: none;
-    background-color: #1f2937;
+    background-color: #111827;
     position: sticky;
     top: 0;
     z-index: 10000;
@@ -293,7 +296,6 @@ export default defineComponent({
       border-radius: 8px;
       h3 {
         color: var(--greyscale-0, #fff);
-        font-family: "BBold";
         font-size: 32px;
         font-weight: 700;
         line-height: 40px;
@@ -376,7 +378,6 @@ export default defineComponent({
       position: relative;
       p {
         color: var(--greyscale-800, #323b49);
-        font-family: "BBold";
         font-size: 124px;
         font-weight: 700;
         line-height: 132px;
@@ -392,7 +393,6 @@ export default defineComponent({
         height: 100%;
         span {
           color: var(--greyscale-0, #fff);
-          font-family: "Medium";
           font-size: 32px;
           font-weight: 500;
           line-height: 40px;
@@ -415,7 +415,6 @@ export default defineComponent({
       }
       &-text {
         color: var(--greyscale-0, #fff);
-        font-family: "Regular";
         font-size: 16px;
         font-weight: 400;
         line-height: 24px;
@@ -442,13 +441,11 @@ export default defineComponent({
           color: var(--greyscale-0, #fff);
         }
         &-name {
-          font-family: "Semibold";
           font-size: 16px;
           font-weight: 600;
           line-height: 24px;
         }
         &-rule {
-          font-family: "Regular ";
           font-size: 14px;
           font-weight: 400;
           line-height: 20px;
@@ -488,7 +485,6 @@ export default defineComponent({
     &-btn {
       margin-top: 48px;
       color: var(--greyscale-0, #fff);
-      font-family: "Semibold";
       font-size: 14px;
       font-weight: 600;
       line-height: 20px;

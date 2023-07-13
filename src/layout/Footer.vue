@@ -82,7 +82,6 @@ export default {
   &-address {
     margin: 16px 0 0;
     color: var(--greyscale-0, #fff);
-    font-family: "Regular";
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -106,7 +105,6 @@ export default {
   &-email,
   &-phone {
     color: var(--greyscale-0, #fff);
-    font-family: "Regular";
     font-size: 14px;
     font-weight: 400;
     line-height: 20px;
@@ -118,7 +116,6 @@ export default {
     border-top: 1px solid#718096;
     span {
       color: var(--greyscale-600, #718096);
-      font-family: "Medium";
       font-size: 12px;
       font-weight: 500;
       line-height: 16px;

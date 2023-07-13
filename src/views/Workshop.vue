@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <el-header
+    <el-header class="item-center"
       ><el-container><Header /></el-container
     ></el-header>
-    <el-main>Main</el-main>
-    <el-footer><Footer /></el-footer>
+    <el-main class="item-center">Main</el-main>
+    <el-footer class="item-center"><Footer /></el-footer>
   </div>
 </template>
 
