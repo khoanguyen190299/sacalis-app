@@ -3,251 +3,195 @@
     <el-header
       ><el-container><Header /></el-container>
     </el-header>
-    <el-container>
-      <div class="side-bar">
-        <Carousel :itemsToShow="2" :wrapAround="true" :transition="500">
-          <Slide v-for="slide in listBar" :key="slide">
-            <div class="carousel__item">
-              <div class="side-bar-item">
-                <img :src="require(`../assets/images/${slide.url}`)" />
-                <h3>{{ slide.label }}</h3>
-              </div>
+    <div class="side-bar">
+      <Carousel :itemsToShow="2" :wrapAround="true" :transition="500">
+        <Slide v-for="slide in listBar" :key="slide">
+          <div class="carousel__item">
+            <div class="side-bar-item">
+              <img :src="require(`../assets/images/${slide.url}`)" />
+              <h3>{{ slide.label }}</h3>
             </div>
-          </Slide>
+          </div>
+        </Slide>
 
-          <template #addons>
-            <Pagination />
-          </template>
-        </Carousel>
+        <template #addons>
+          <Pagination />
+        </template>
+      </Carousel>
+    </div>
+    <el-main>
+      <!-- Giới thiệu -->
+      <div class="session">
+        <el-container>
+          <div class="session-title">
+            <p>GIỚI THIỆU</p>
+            <div class="session-title-text item-middle">
+              <span>VỀ SACALIS</span>
+            </div>
+          </div>
+          <div class="session-content">
+            <el-row class="reverser" :gutter="24">
+              <el-col :span="12"
+                ><div
+                  class="session-content-img image align-center item-right h-100"
+                >
+                  <img src="../assets/images/bar-1.svg" alt="" /></div
+              ></el-col>
+              <el-col :span="12"
+                ><div class="session-content-text align-center h-100">
+                  <span
+                    >Lorem ipsum dolor sit amet consectetur. Morbi eu pharetra
+                    purus porta. Nulla fermentum gravida ultricies ultricies
+                    ipsum etiam nibh eget ipsum. Dui sapien scelerisque
+                    suspendisse orci ullamcorper duis. Nullam sagittis gravida
+                    dolor scelerisque enim pulvinar et lorem. Lectus consectetur
+                    felis velit eu. Elementum gravida amet ac tempor et.</span
+                  >
+                </div></el-col
+              >
+            </el-row>
+          </div>
+        </el-container>
       </div>
 
-      <el-main>
-        <!-- Giới thiệu -->
-        <div class="session">
-          <el-container>
-            <div class="session-title">
-              <p>GIỚI THIỆU</p>
-              <div class="session-title-text item-middle">
-                <span>VỀ SACALIS</span>
-              </div>
+      <!-- Đội ngũ -->
+      <div class="session">
+        <el-container>
+          <div class="session-title">
+            <p>THÀNH VIÊN</p>
+            <div class="session-title-text item-middle">
+              <span>ĐỘI NGŨ</span>
             </div>
-            <div class="session-content">
-              <el-row class="reverser" :gutter="24">
-                <el-col :span="12"
-                  ><div
-                    class="session-content-img image align-center item-right h-100"
-                  >
-                    <img src="../assets/images/bar-1.svg" alt="" /></div
-                ></el-col>
-                <el-col :span="12"
-                  ><div class="session-content-text align-center h-100">
-                    <span
-                      >Lorem ipsum dolor sit amet consectetur. Morbi eu pharetra
+          </div>
+          <div class="session-content">
+            <Carousel :items-to-show="4" :wrap-around="true">
+              <Slide
+                v-for="slide in listPt"
+                :key="slide"
+                style="position: relative"
+              >
+                <div class="carousel__item">
+                  <img :src="require(`../assets/images/${slide.url}`)" />
+                </div>
+                <div class="session-content-slide">
+                  <div class="session-content-info">
+                    <p class="session-content-info-rule">{{ slide.rule }}</p>
+                    <p class="session-content-info-name">{{ slide.name }}</p>
+                  </div>
+                </div>
+              </Slide>
+
+              <template #addons>
+                <Pagination />
+              </template>
+            </Carousel>
+          </div>
+        </el-container>
+      </div>
+
+      <!-- Dịch vụ -->
+      <div class="session">
+        <el-container>
+          <div class="session-title">
+            <p>HUẤN LUYỆN VIÊN</p>
+            <div class="session-title-text item-middle">
+              <span>DỊCH VỤ</span>
+            </div>
+          </div>
+          <div class="session-content">
+            <el-row class="" :gutter="24">
+              <el-col :span="12"
+                ><div
+                  class="session-content-img image align-center item-right h-100"
+                >
+                  <img src="../assets/images/bar-1.svg" alt="" /></div
+              ></el-col>
+              <el-col :span="12"
+                ><div class="session-content-text align-center h-100">
+                  <div>
+                    <div></div>
+                    <p class="text-align-right m-0">
+                      Lorem ipsum dolor sit amet consectetur. Morbi eu pharetra
                       purus porta. Nulla fermentum gravida ultricies ultricies
                       ipsum etiam nibh eget ipsum. Dui sapien scelerisque
                       suspendisse orci ullamcorper duis. Nullam sagittis gravida
                       dolor scelerisque enim pulvinar et lorem. Lectus
                       consectetur felis velit eu. Elementum gravida amet ac
-                      tempor et.</span
-                    >
-                  </div></el-col
-                >
-              </el-row>
-            </div>
-          </el-container>
-        </div>
-
-        <!-- Đội ngũ -->
-        <div class="session">
-          <el-container>
-            <div class="session-title">
-              <p>THÀNH VIÊN</p>
-              <div class="session-title-text item-middle">
-                <span>ĐỘI NGŨ</span>
-              </div>
-            </div>
-            <div class="session-content">
-              <Carousel :items-to-show="4" :wrap-around="true">
-                <Slide v-for="slide in listPt" :key="slide">
-                  <div class="carousel__item">
-                    <img :src="require(`../assets/images/${slide.url}`)" />
+                      tempor et.
+                    </p>
+                    <div class="item-right">
+                      <el-button class="session-btn"
+                        >Đăng ký tập luyện</el-button
+                      >
+                    </div>
                   </div>
-                </Slide>
-
-                <template #addons>
-                  <Pagination />
-                </template>
-              </Carousel>
-            </div>
-          </el-container>
-        </div>
-
-        <!-- Dịch vụ -->
-        <div class="session">
-          <el-container>
-            <div class="session-title">
-              <p>HUẤN LUYỆN VIÊN</p>
-              <div class="session-title-text item-middle">
-                <span>DỊCH VỤ</span>
-              </div>
-            </div>
-            <div class="session-content">
-              <el-row class="" :gutter="24">
-                <el-col :span="12"
-                  ><div
-                    class="session-content-img image align-center item-right h-100"
-                  >
-                    <img src="../assets/images/bar-1.svg" alt="" /></div
-                ></el-col>
-                <el-col :span="12"
-                  ><div class="session-content-text align-center h-100">
-                    <div>
-                      <div></div>
-                      <p class="text-align-right m-0">
-                        Lorem ipsum dolor sit amet consectetur. Morbi eu
-                        pharetra purus porta. Nulla fermentum gravida ultricies
-                        ultricies ipsum etiam nibh eget ipsum. Dui sapien
-                        scelerisque suspendisse orci ullamcorper duis. Nullam
-                        sagittis gravida dolor scelerisque enim pulvinar et
-                        lorem. Lectus consectetur felis velit eu. Elementum
-                        gravida amet ac tempor et.
-                      </p>
-                      <div class="item-right">
-                        <el-button class="session-btn"
-                          >Đăng ký tập luyện</el-button
-                        >
-                      </div>
-                    </div>
-                  </div></el-col
-                >
-              </el-row>
-            </div>
-          </el-container>
-        </div>
-
-        <!-- Giáo án -->
-        <div class="session">
-          <el-container>
-            <div class="session-title">
-              <p>TẬP LUYỆN</p>
-              <div class="session-title-text item-middle">
-                <span>GIÁO ÁN</span>
-              </div>
-            </div>
-            <div class="session-content">
-              <el-row class="reverser" :gutter="24">
-                <el-col :span="12"
-                  ><div
-                    class="session-content-img image align-center item-right h-100"
-                  >
-                    <img src="../assets/images/bar-1.svg" alt="" /></div
-                ></el-col>
-                <el-col :span="12"
-                  ><div class="session-content-text align-center h-100">
-                    <div>
-                      <p class="m-0">
-                        Lorem ipsum dolor sit amet consectetur. Morbi eu
-                        pharetra purus porta. Nulla fermentum gravida ultricies
-                        ultricies ipsum etiam nibh eget ipsum. Dui sapien
-                        scelerisque suspendisse orci ullamcorper duis. Nullam
-                        sagittis gravida dolor scelerisque enim pulvinar et
-                        lorem. Lectus consectetur felis velit eu. Elementum
-                        gravida amet ac tempor et.
-                      </p>
-                      <el-button class="session-btn">Xem giáo án</el-button>
-                    </div>
-                  </div></el-col
-                >
-              </el-row>
-            </div>
-          </el-container>
-        </div>
-      </el-main>
-      <el-footer>
-        <el-container>
-          <div class="footer">
-            <div class="space-between">
-              <div class="footer-left">
-                <div class="footer-logo image">
-                  <img src="../assets/logo/logo.svg" alt="" />
-                </div>
-                <p class="footer-address">
-                  Địa chỉ: Số 12 phố Khúc Thừa Dụ, Cầu Giấy, Hà Nội
-                </p>
-              </div>
-              <div class="footer-right">
-                <ul class="list-app">
-                  <li class="app-item">
-                    <a
-                      href="https://facebook.com/"
-                      target="_blank"
-                      class="app-item-link"
-                    >
-                      <div class="app-item-icon images">
-                        <img src="../assets/icons/icon-fb.svg" alt="" />
-                      </div>
-                    </a>
-                  </li>
-                  <li class="app-item">
-                    <a
-                      href="https://youtube.com/"
-                      target="_blank"
-                      class="app-item-link"
-                    >
-                      <div class="app-item-icon images">
-                        <img src="../assets/icons/icon-youtube.svg" alt="" />
-                      </div>
-                    </a>
-                  </li>
-                  <li class="app-item">
-                    <a
-                      href="https://tiktok.com/"
-                      target="_blank"
-                      class="app-item-link"
-                    >
-                      <div class="app-item-icon images">
-                        <img src="../assets/icons/icon-tiktok.svg" alt="" />
-                      </div>
-                    </a>
-                  </li>
-                  <li class="app-item">
-                    <a
-                      href="https://telegram.com/"
-                      target="_blank"
-                      class="app-item-link"
-                    >
-                      <div class="app-item-icon images">
-                        <img src="../assets/icons/icon-telegram.svg" alt="" />
-                      </div>
-                    </a>
-                  </li>
-                </ul>
-                <p class="footer-email">Email: sacalisvn@gmail.com</p>
-                <p class="footer-phone m-0">Hotline: 0981409073</p>
-              </div>
-            </div>
-            <div class="footer-license item-middle">
-              <span>© 2023 Sacalis. All Rights Reserved.</span>
-            </div>
+                </div></el-col
+              >
+            </el-row>
           </div>
         </el-container>
-      </el-footer>
-    </el-container>
+      </div>
+
+      <!-- Giáo án -->
+      <div class="session">
+        <el-container>
+          <div class="session-title">
+            <p>TẬP LUYỆN</p>
+            <div class="session-title-text item-middle">
+              <span>GIÁO ÁN</span>
+            </div>
+          </div>
+          <div class="session-content">
+            <el-row class="reverser" :gutter="24">
+              <el-col :span="12"
+                ><div
+                  class="session-content-img image align-center item-right h-100"
+                >
+                  <img src="../assets/images/bar-1.svg" alt="" /></div
+              ></el-col>
+              <el-col :span="12"
+                ><div class="session-content-text align-center h-100">
+                  <div>
+                    <p class="m-0">
+                      Lorem ipsum dolor sit amet consectetur. Morbi eu pharetra
+                      purus porta. Nulla fermentum gravida ultricies ultricies
+                      ipsum etiam nibh eget ipsum. Dui sapien scelerisque
+                      suspendisse orci ullamcorper duis. Nullam sagittis gravida
+                      dolor scelerisque enim pulvinar et lorem. Lectus
+                      consectetur felis velit eu. Elementum gravida amet ac
+                      tempor et.
+                    </p>
+                    <a href="/lesson"
+                      ><el-button class="session-btn">Xem giáo án</el-button></a
+                    >
+                  </div>
+                </div></el-col
+              >
+            </el-row>
+          </div>
+        </el-container>
+      </div>
+    </el-main>
+    <el-footer>
+      <Footer />
+    </el-footer>
   </div>
 </template>
 
 <script>
 import Header from "../layout/Header.vue";
+import Footer from "../layout/Footer.vue";
 import { defineComponent } from "vue";
 import "vue3-carousel/dist/carousel.css";
 import { Carousel, Pagination, Slide } from "vue3-carousel";
 export default defineComponent({
-  name: "HomeView",
+  name: "home-view",
   components: {
     Header,
     Carousel,
     Slide,
     Pagination,
+    Footer,
     // Navigation,
   },
   data() {
@@ -315,6 +259,10 @@ export default defineComponent({
 <style lang="scss">
 .home {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
   .el-header {
     /* --el-header-padding: none; */
     --el-header-height: none;
@@ -324,12 +272,15 @@ export default defineComponent({
     z-index: 10000;
   }
   .el-main {
+    /* --el-main-padding: 0 20px; */
     margin-bottom: 164px;
+    flex: 1;
   }
 
   .el-footer {
     border-top: 1px solid #718096;
     padding-top: 23px;
+    height: 100%;
   }
 
   .side-bar {
@@ -399,7 +350,7 @@ export default defineComponent({
 
     .carousel__slide--active {
       opacity: 1;
-      transform: rotateY(0) scale(1.1);
+      transform: rotateY(0) scale(1.03);
       margin-left: 24px;
       img {
         overflow: hidden;
@@ -469,6 +420,46 @@ export default defineComponent({
         font-weight: 400;
         line-height: 24px;
       }
+
+      &-slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 16px 20px;
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        p {
+          margin: 0;
+          text-align: left;
+          color: var(--greyscale-0, #fff);
+        }
+        &-name {
+          font-family: "Semibold";
+          font-size: 16px;
+          font-weight: 600;
+          line-height: 24px;
+        }
+        &-rule {
+          font-family: "Regular ";
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 20px;
+        }
+      }
+
+      .carousel__item {
+        img {
+          border-radius: 8px;
+        }
+      }
       .carousel * {
         width: 100%;
       }
@@ -510,59 +501,6 @@ export default defineComponent({
         border: 1px solid var(--greyscale-500, #a0aec0);
         color: var(--greyscale-500, #a0aec0);
         background-color: transparent;
-      }
-    }
-  }
-
-  .footer {
-    &-logo {
-      width: 74px;
-      min-width: 74px;
-      height: 64px;
-    }
-    &-address {
-      margin: 16px 0 0;
-      color: var(--greyscale-0, #fff);
-      font-family: "Regular";
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 20px;
-    }
-    .list-app {
-      list-style-type: none;
-      display: flex;
-      gap: 16px;
-      justify-content: flex-end;
-      .app-item {
-        &-icon {
-          width: 32px;
-          min-width: 32px;
-          height: 32px;
-        }
-      }
-    }
-    &-email {
-      margin: 24px 0 0;
-    }
-    &-email,
-    &-phone {
-      color: var(--greyscale-0, #fff);
-      font-family: "Regular";
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 20px;
-      text-align: right;
-    }
-    &-license {
-      margin-top: 24px;
-      padding: 8px;
-      border-top: 1px solid#718096;
-      span {
-        color: var(--greyscale-600, #718096);
-        font-family: "Medium";
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 16px;
       }
     }
   }
