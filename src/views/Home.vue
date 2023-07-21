@@ -161,8 +161,10 @@
                       consectetur felis velit eu. Elementum gravida amet ac
                       tempor et.
                     </p>
-                    <a href="/lesson"
-                      ><el-button class="session-btn">Xem giáo án</el-button></a
+                    <RouterLink to="/lesson"
+                      ><el-button class="session-btn"
+                        >Xem giáo án</el-button
+                      ></RouterLink
                     >
                   </div>
                 </div></el-col
