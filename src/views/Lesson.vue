@@ -453,7 +453,6 @@ export default {
           position: absolute;
           top: 26px;
           left: 16px;
-
           padding: 4px 16px;
           display: flex;
           height: 32px;

@@ -2,10 +2,9 @@
   <div class="header">
     <el-row>
       <el-col :span="5"
-        ><div class="logo">
+        ><a href="/" class="logo">
           <div class="logo-img image">
-            <img src="../assets/logo/logo.svg" alt="" />
-          </div></div
+            <img src="../assets/logo/logo.svg" alt="" /></div></a
       ></el-col>
       <el-col :span="14">
         <div class="nav">
