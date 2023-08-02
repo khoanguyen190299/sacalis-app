@@ -13,35 +13,35 @@
               <router-link
                 to="/"
                 :class="this.$route.path === '/' ? 'nav-active' : ''"
-                >Trang chủ</router-link
+                >TRANG CHỦ</router-link
               >
             </li>
             <li>
               <router-link
                 to="/lesson"
                 :class="this.$route.path === '/lesson' ? 'nav-active' : ''"
-                >Giáo án tập luyện</router-link
+                >GIÁO ÁN TẬP LUYỆN</router-link
               >
             </li>
             <li>
               <router-link
                 to="/workshop"
                 :class="this.$route.path === '/workshop' ? 'nav-active' : ''"
-                >Workshop</router-link
+                >WORKSHOP</router-link
               >
             </li>
             <li>
               <router-link
                 to="/blogs"
                 :class="this.$route.path === '/blogs' ? 'nav-active' : ''"
-                >Blogs</router-link
+                >BLOGS</router-link
               >
             </li>
             <li>
               <router-link
                 to="/about"
                 :class="this.$route.path === '/about' ? 'nav-active' : ''"
-                >Về chúng tôi</router-link
+                >VỀ CHÚNG TÔI</router-link
               >
             </li>
           </ul>
@@ -49,10 +49,10 @@
       </el-col>
       <el-col :span="5" class="align-center item-right"
         ><div class="account">
-          <div class="account-btn item-middle">
+          <!-- <div class="account-btn item-middle">
             <button class="sigin">Đăng nhập</button>
             <button class="sigup">Đăng ký</button>
-          </div>
+          </div> -->
         </div></el-col
       >
     </el-row>
