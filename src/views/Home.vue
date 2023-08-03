@@ -63,12 +63,58 @@
               <span>ĐỘI NGŨ</span>
             </div>
           </div>
-          <div class="session-content">
+          <div class="session-content" style="position: relative">
+            <div class="slider-detail" @mouseleave="hideDetailCard">
+              <span class="slider-detail__rule">{{ cardActive.rule }}</span>
+              <h3 class="slider-detail__name">{{ cardActive.name }}</h3>
+              <div class="slider-detail__session">
+                <div class="slider-detail__title">
+                  <div class="slider-detail__title-icon image">
+                    <img src="../assets/icons/icon-medal.svg" alt="" />
+                  </div>
+                  <span class="slider-detail__title-text"
+                    >Thành tích nổi bật</span
+                  >
+                </div>
+                <div class="slider-detail__content">
+                  <ul class="slider-detail__list">
+                    <li
+                      v-for="exp in cardActive.exps"
+                      :key="exp"
+                      class="slider-detail__item"
+                    >
+                      {{ exp }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="slider-detail__session">
+                <div class="slider-detail__title">
+                  <div class="slider-detail__title-icon image">
+                    <img src="../assets/icons/icon-star.svg" alt="" />
+                  </div>
+                  <span class="slider-detail__title-text"
+                    >Tập luyện với tôi sẽ như thế nào</span
+                  >
+                </div>
+                <div class="slider-detail__content">
+                  <p class="slider-detail__content-text">
+                    Tôi là một người cực kì nghiêm khắc và khó tính trong hướng
+                    dẫn học viên, tôi để ý đến từng chi tiết nhỏ khi khách hàng
+                    tập luyện. Nhưng không vì thế mà buổi tập trở nên nhàm chán
+                    mà ngược lại luôn tràn ngập tiếng cười và cháy trong từng
+                    rep tập.
+                  </p>
+                </div>
+              </div>
+            </div>
             <Carousel :items-to-show="4" :wrap-around="true">
               <Slide
                 v-for="slide in listPt"
                 :key="slide"
                 style="position: relative"
+                @mouseover="showDetailtCard($event, slide)"
+                @mouseleave="hideDetailCard"
               >
                 <div class="carousel__item">
                   <img :src="require(`../assets/images/${slide.url}`)" />
@@ -198,32 +244,73 @@ export default defineComponent({
   },
   data() {
     return {
-      test: "../assets/images/bar-1.svg",
+      slide: null,
+      cardActive: {},
       listPt: [
         {
           name: "Nguyễn Thế Đông (Đông Shifu)",
           rule: "Founder",
           url: "img-pt.svg",
+          exps: [
+            "Kinh nghiệm tập luyện: 8 năm",
+            "Thành lập Clb Fu Street Workout",
+            "Thành lập team Sacalis",
+            "Top 8 VnSwcf Open cup 2015 & 2018",
+            "Top 1 Muscle Up vòng loại phía tây Hà Nội 2022",
+            "Top 3 Battle vòng loại phía tây Hà Nội 2022",
+          ],
         },
         {
           name: "Nguyễn Thế Đông (Đông Shifu)",
           rule: "Founder",
           url: "img-pt.svg",
+          exps: [
+            "Kinh nghiệm tập luyện: 8 năm",
+            "Thành lập Clb Fu Street Workout",
+            "Thành lập team Sacalis",
+            "Top 8 VnSwcf Open cup 2015 & 2018",
+            "Top 1 Muscle Up vòng loại phía tây Hà Nội 2022",
+            "Top 3 Battle vòng loại phía tây Hà Nội 2022",
+          ],
         },
         {
           name: "Nguyễn Thế Đông (Đông Shifu)",
           rule: "Founder",
           url: "img-pt.svg",
+          exps: [
+            "Kinh nghiệm tập luyện: 8 năm",
+            "Thành lập Clb Fu Street Workout",
+            "Thành lập team Sacalis",
+            "Top 8 VnSwcf Open cup 2015 & 2018",
+            "Top 1 Muscle Up vòng loại phía tây Hà Nội 2022",
+            "Top 3 Battle vòng loại phía tây Hà Nội 2022",
+          ],
         },
         {
           name: "Nguyễn Thế Đông (Đông Shifu)",
           rule: "Founder",
           url: "img-pt.svg",
+          exps: [
+            "Kinh nghiệm tập luyện: 8 năm",
+            "Thành lập Clb Fu Street Workout",
+            "Thành lập team Sacalis",
+            "Top 8 VnSwcf Open cup 2015 & 2018",
+            "Top 1 Muscle Up vòng loại phía tây Hà Nội 2022",
+            "Top 3 Battle vòng loại phía tây Hà Nội 2022",
+          ],
         },
         {
           name: "Nguyễn Thế Đông (Đông Shifu)",
           rule: "Founder",
           url: "img-pt.svg",
+          exps: [
+            "Kinh nghiệm tập luyện: 8 năm",
+            "Thành lập Clb Fu Street Workout",
+            "Thành lập team Sacalis",
+            "Top 8 VnSwcf Open cup 2015 & 2018",
+            "Top 1 Muscle Up vòng loại phía tây Hà Nội 2022",
+            "Top 3 Battle vòng loại phía tây Hà Nội 2022",
+          ],
         },
       ],
       listBar: [
@@ -254,8 +341,22 @@ export default defineComponent({
       ],
     };
   },
-  mounted() {},
-  methods: {},
+  mounted() {
+    this.slide = document.querySelector(".slider-detail");
+  },
+  methods: {
+    showDetailtCard(e, card) {
+      this.cardActive = card;
+      this.slide.style.left = `${e.clientX - 200}px`;
+      this.slide.style.display = "block";
+    },
+    hideDetailCard(e) {
+      if (e.relatedTarget.className.includes("slider-detail")) {
+        return;
+      }
+      this.slide.style.display = "none";
+    },
+  },
 });
 </script>
 <style lang="scss">
@@ -271,7 +372,7 @@ export default defineComponent({
   .el-header {
     /* --el-header-padding: none; */
     --el-header-height: none;
-    background-color: #111827;
+    background: var(--greyscale-900, #05070b);
     position: sticky;
     top: 0;
     z-index: 10000;
@@ -450,6 +551,62 @@ export default defineComponent({
         &-rule {
           font-size: 14px;
           font-weight: 400;
+          line-height: 20px;
+        }
+      }
+
+      .slider-detail {
+        display: none;
+        position: absolute;
+        max-width: 597px;
+        top: -200px;
+        z-index: 10;
+        border-radius: 8px;
+        border: 1px solid var(--greyscale-600, #718096);
+        background: var(--greyscale-900, #05070b);
+        padding: 24px;
+        &__rule {
+          color: var(--greyscale-0, #fff);
+          font-size: 14px;
+          line-height: 20px;
+        }
+        &__name {
+          color: var(--greyscale-0, #fff);
+          font-size: 20px;
+          font-weight: 600;
+          line-height: 28px;
+          margin: 0;
+        }
+        &__session {
+          margin-top: 24px;
+        }
+        &__title {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          &-icon {
+            width: 24px;
+            min-width: 24px;
+            height: 24px;
+          }
+          &-text {
+            color: var(--greyscale-0, #fff);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+          }
+          &__list {
+          }
+          &__item {
+            color: var(--greyscale-0, #fff);
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+        &__content {
+          margin-top: 8px;
+          color: var(--greyscale-0, #fff);
+          font-size: 14px;
           line-height: 20px;
         }
       }

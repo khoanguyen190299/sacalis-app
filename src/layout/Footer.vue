@@ -3,9 +3,9 @@
     <div class="footer">
       <div class="space-between">
         <div class="footer-left">
-          <a href="/" class="footer-logo image">
+          <RouterLink to="/" class="footer-logo image">
             <img src="../assets/logo/logo.svg" alt="" />
-          </a>
+          </RouterLink>
           <p class="footer-address">
             Địa chỉ: Số 12 phố Khúc Thừa Dụ, Cầu Giấy, Hà Nội
           </p>

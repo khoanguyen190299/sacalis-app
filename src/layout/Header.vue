@@ -1,11 +1,13 @@
 <template>
   <div class="header">
-    <el-row>
-      <el-col :span="5"
-        ><a href="/" class="logo">
+    <el-row class="align-center">
+      <el-col :span="5">
+        <router-link to="/" class="logo">
           <div class="logo-img image">
-            <img src="../assets/logo/logo.svg" alt="" /></div></a
-      ></el-col>
+            <img src="../assets/logo/logo.svg" alt="" />
+          </div>
+        </router-link>
+      </el-col>
       <el-col :span="14">
         <div class="nav">
           <ul>
@@ -67,7 +69,7 @@ export default {
 </script>
 <style lang="scss">
 .header {
-  padding: 15px 0;
+  /* padding: 15px 0; */
   width: 100%;
   .logo {
     &-img {
@@ -77,18 +79,37 @@ export default {
     }
   }
   .nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
     ul {
       list-style-type: none;
       display: flex;
       align-items: center;
-      gap: 32px;
+      /* gap: 32px; */
+      height: 100%;
+      margin: 0;
       li {
+        display: flex;
+        align-items: center;
+        height: 80px;
+        justify-content: center;
+        /* padding: 0 16px; */
+        &:hover {
+          cursor: pointer;
+          background: var(--greyscale-800, #1f2937);
+        }
         a {
+          padding: 0 16px;
           text-decoration: none;
           color: var(--greyscale-0, #fff);
           font-size: 14px;
           font-weight: 500;
           line-height: 20px;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
         .nav-active {
           font-weight: 600;
@@ -97,8 +118,8 @@ export default {
             content: "";
             display: block;
             position: absolute;
-            bottom: -8px;
-            left: 0;
+            bottom: 8px;
+            left: 16px;
             width: 24px;
             height: 4px;
             border-radius: 2px;
